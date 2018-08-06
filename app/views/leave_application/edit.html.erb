@@ -7,6 +7,7 @@
   <h2>Leave Request ID: <%= @leave.id %> </h2>
 
   <p></p>
+  <%= form_for @leave, url: {:action => "update"} do |f| %>
   <table class="expand">
     <tr>
       <td>Applicant :</td>
@@ -26,7 +27,6 @@
       <td>Reason:</td>
       <td><%= @leave.reason %></td>
     </tr>
-  <%= form_for @leave, url: {:action => "update"} do |f| %>
     <tr>
       <td>Your comments: </td>
       <td><%= f.text_area :approver_comment %></td>
@@ -39,7 +39,7 @@
       <td>&nbsp;</td>
       <td><%= f.submit "Submit", :class => 'button' %></td>
     </tr>
-  <% end %>
   </table>
+  <% end %>
 
 </div>
