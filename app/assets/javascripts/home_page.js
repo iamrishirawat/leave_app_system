@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
-    
   $(window).on('popstate', function(){
-    alert("Yo")
     location.reload(true);
   })
 

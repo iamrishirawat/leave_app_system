@@ -1,27 +1,21 @@
-<% @page_title = "Action History" %>
-
+<% @page_title = "Worklist" %>
 <br>
-
 <%= link_to("<< Homepage", root_path, :class => 'action_view') %>
 
-<br>
-<br>
-  &nbsp <%= link_to('Worklist', leave_system_worklist_path, :class => 'action_view') %>
-
-<div class="apply-history index">
-  <h2>Action History</h2>
-
+<div class="worklist">
+  <h2>Your Worklist</h2>
   
   <p></p>
-  <table id="all_applications" class="view_table" summary="Action History">
+  <table class="view_table" summary="Worklist">
     <tr>
-      <th>Request ID</th>
+      <th>Leave Request ID</th>
       <th>Applicant</th>
       <th>From Date</th>
       <th>To Date</th>
+      <th>Total Leaves</th>
       <th>Reason</th>
       <th>Status</th>
-      <th>View Details</th>
+      <th>Action</th>
     </tr>
     <% @leaves.each do |leave| %>
     <tr>
@@ -29,10 +23,11 @@
       <td><%= leave.applicant.first_name + " " + leave.applicant.last_name %></td>
       <td><%= leave.from_date %></td>
       <td><%= leave.to_date %></td>
+      <td><%= leave.total_leaves %></td>
       <td><%= leave.reason %></td>
       <td><%= leave.leave_status %></td>
       <td class="actions">
-        <%= link_to('View', "/leave_system/show_action/#{leave.id}", :class => 'action_view') %>
+        <%= link_to('Approve/Reject', edit_leave_application_path(leave), :class => 'action_view') %>
       </td>
     </tr>
     <% end %>

@@ -6,7 +6,7 @@
 
 <br>
 <br>
-  <%= link_to('Apply for leave', new_leave_system_path, :class => 'action_view') %>
+  <%= link_to('Apply for leave', new_leave_application_path, :class => 'action_view') %>
 
 <div class="apply-history index">
   <h2>Apply History</h2>
@@ -32,7 +32,7 @@
       <td><%= leave.approver.first_name + " " + leave.approver.last_name %></td>
       <td><%= leave.leave_status %></td>
       <td class="actions">
-        <%= link_to('View', leave_system_path(leave), :class => 'action_view') %>
+        <%= link_to('View', leave_application_path(leave), :class => 'action_view') %>
       </td>
     </tr>
     <% end %>

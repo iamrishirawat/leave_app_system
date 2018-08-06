@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  get 'leave_system/action_history'
+  get 'leave_application/action_history'
   
-  get 'leave_system/show_action/:id' , :to => 'leave_system#show_action'
+  get 'leave_application/show_action/:id' , :to => 'leave_application#show_action'
 
-  get 'leave_system/worklist'
+  get 'leave_application/worklist'
 
-  resources :leave_system, :except => [:destroy]
+  resources :leave_application, :except => [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

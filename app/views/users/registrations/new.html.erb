@@ -21,7 +21,7 @@
   
   <tr>
     <td><%= f.label :role %><br /></td>
-    <td><%= f.select :role, ["Admin", "Applicant"] %></td>
+    <td><%= f.select :role, ["Approver", "Applicant"] %></td>
   </tr>
   
   <tr>
@@ -31,9 +31,6 @@
 
   <tr>
     <td><%= f.label :password %></td>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
     <td><%= f.password_field :password, autocomplete: "off" %></td>
   </tr>
 

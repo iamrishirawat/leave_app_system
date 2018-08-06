@@ -11,16 +11,16 @@
     <br>
     <br>
     <% if current_user.role == "Applicant" %>
-      <li><%=link_to("Apply Leave", new_leave_system_path, :class => 'action_view') %></li>
+      <li><%=link_to("Apply Leave", new_leave_application_path, :class => 'action_view') %></li>
       <br>
-      <!-- <li><%#=link_to("Show Leave Balance", leave_system_show_balance_path, :class => 'action_view') %></li> -->
-      <li><%=link_to("Show Leave History", leave_system_index_path, :class => 'action_view') %></li>
+      <!-- <li><%#=link_to("Show Leave Balance", leave_application_show_balance_path, :class => 'action_view') %></li> -->
+      <li><%=link_to("Show Leave History", leave_application_index_path, :class => 'action_view') %></li>
     <% end %>
 
-    <% if current_user.role == "Admin" %>
-    <li><%=link_to("Your worklist", leave_system_worklist_path, :class => 'action_view') %></li>
+    <% if current_user.role == "Approver" %>
+    <li><%=link_to("Your worklist", leave_application_worklist_path, :class => 'action_view') %></li>
     <br>
-    <li><%=link_to("Show Action History", leave_system_action_history_path, :class => 'action_view' ) %></li>
+    <li><%=link_to("Show Action History", leave_application_action_history_path, :class => 'action_view' ) %></li>
     <% end %>
     <% else %>
     

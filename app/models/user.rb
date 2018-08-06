@@ -5,6 +5,14 @@ class User < ApplicationRecord
          #:recoverable, :rememberable, :trackable, :confirmable
   has_many :leave_applications
   
+  def applicant?
+    role == "Applicant"
+  end
+  
+  def approver?
+    role == "Approver"
+  end
+  
   #validates :password, :allow_nil => true
   validates :first_name, :presence => true, :length => { :within => 1..25 }
   validates :last_name, :presence => true, :length => { :within => 1..25 }

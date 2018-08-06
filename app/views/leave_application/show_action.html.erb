@@ -1,16 +1,16 @@
-<% @page_title = "Apply History" %>
+<% @page_title = "Action Details" %>
 <br>
- <%= link_to("<< Back to Apply History", leave_system_index_path, :class => 'action_view') %>
- 
- <p></p>
- 
-  <%= link_to('Apply for leave', new_leave_system_path, :class => 'action_view') %>
+ <%= link_to("<< Back to Action History", leave_application_action_history_path, :class => 'action_view') %>
 
 <div class="apply-history index">
-  <h2>Request ID: <%= @leave.id%> leave details</h2>
+  <h2>Request ID: <%= @leave.id %> leave details</h2>
 
 
-  <table class="expand_full" id="all_applications" summary="Leave Details">
+  <table class="expand_full" id="all_applications" summary="Action Details">
+    <tr>
+      <td>Applicant: </td>
+      <td><%= @leave.applicant.first_name + " " + @leave.applicant.last_name %></td>
+    </tr>
     <tr>
       <td>From Date: </td>
       <td><%= @leave.from_date %></td>
@@ -30,10 +30,6 @@
     <tr>
       <td>Status: </td>
       <td><%= @leave.leave_status %></td>
-    </tr>
-    <tr>
-      <td>Approver: </td>
-      <td><%= @leave.approver.first_name + " " + @leave.approver.last_name %></td>
     </tr>
     <tr>
       <td>Approver's Comments: </td>
