@@ -2264,3 +2264,87 @@ Processing by HomePageController#homepage as HTML
 Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/leave_system/action_history" for 127.0.0.1 at 2018-08-06 15:28:41 +0530
+  [1m[35m (20.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LeaveSystemController#action_history as HTML
+Redirected to http://127.0.0.1:3000/users/sign_in
+Filter chain halted as :validate rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-06 15:28:41 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 1130ms (Views: 1082.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-08-06 15:28:50 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q2zlRLwqrh/B0u/h5oNryiXKZ0lMzk4s8lZHxJJu/axiD8xinuPlYJGStoqIFx6o06pUWNEfjEySJE0gSq329Q==", "user"=>{"email"=>"firstadmin@leaveapp.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'firstadmin@leaveapp.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 272ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-06 15:28:50 +0530
+Processing by HomePageController#homepage as HTML
+  Rendering home_page/homepage.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered home_page/homepage.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/leave_system/worklist" for 127.0.0.1 at 2018-08-06 15:28:52 +0530
+Processing by LeaveSystemController#worklist as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mLeaveApplication Load (5.9ms)[0m  [1m[34mSELECT `leave_applications`.* FROM `leave_applications` WHERE (approver_user_id = 1 and leave_status = 'Apply')[0m
+  Rendering leave_system/worklist.html.erb within layouts/application
+  Rendered leave_system/worklist.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 31.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-06 15:28:53 +0530
+Processing by HomePageController#homepage as HTML
+  Rendering home_page/homepage.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered home_page/homepage.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/leave_system/action_history" for 127.0.0.1 at 2018-08-06 15:28:54 +0530
+Processing by LeaveSystemController#action_history as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mLeaveApplication Load (0.2ms)[0m  [1m[34mSELECT `leave_applications`.* FROM `leave_applications` WHERE (approver_user_id = 1 and (leave_status = 'Approve' || leave_status = 'Reject')  )[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendering leave_system/action_history.html.erb within layouts/application
+  Rendered leave_system/action_history.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 63ms (Views: 37.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/leave_system/show_action/1" for 127.0.0.1 at 2018-08-06 15:28:56 +0530
+Processing by LeaveSystemController#show_action as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mLeaveApplication Load (1.9ms)[0m  [1m[34mSELECT  `leave_applications`.* FROM `leave_applications` WHERE (id = '1') ORDER BY `leave_applications`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendering leave_system/show_action.html.erb within layouts/application
+  Rendered leave_system/show_action.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2018-08-06 15:28:58 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-06 15:28:58 +0530
+Processing by HomePageController#homepage as HTML
+  Rendering home_page/homepage.html.erb within layouts/application
+  Rendered home_page/homepage.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
