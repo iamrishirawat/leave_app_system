@@ -1,0 +1,35 @@
+<% @page_title = "User Login" %>
+
+<h2> Please enter your userame and password: </h2>
+
+<%= link_to("<< Back to Homepage", root_path, :class => 'action_view') %>
+
+<div class="login">
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <table class='login'>
+      <tr>
+      <td><%= f.label :email %><br /></td>
+      <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+      </tr
+      <tr>
+      <td><%= f.label :password %><br /></td>
+      <td><%= f.password_field :password, autocomplete: "off" %></td>
+      </tr
+    <% if devise_mapping.rememberable? -%>
+    <tr>
+        <td><%= f.check_box :remember_me %></td>
+        <td><%= f.label :remember_me %></td>
+     </tr
+    <% end -%>
+    <tr>
+    <td></td>
+    <td><%= f.submit "Log in", :class => 'button' %></td>
+    </tr
+  <% end %>
+  
+  
+  <p>Not a user? <%= link_to("Register here", new_user_registration_path, :class => 'action_view') %>.</p>
+</div>
+
+

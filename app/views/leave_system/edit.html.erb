@@ -1,0 +1,45 @@
+<% @page_title = "Approver Action" %>
+<br>
+<%= link_to("<< Back to Worklist", leave_system_worklist_path, :class => 'action_view') %>
+
+<div class="apply-history index">
+
+  <h2>Leave Request ID: <%= @leave.id %> </h2>
+
+  <p></p>
+  <table class="expand">
+    <tr>
+      <td>Applicant :</td>
+      <td><%= @leave.applicant.first_name + " " + @leave.applicant.last_name %></td>
+    </tr>
+    <tr>
+      <td>From Date :</td>
+      <td><%= @leave.from_date %></td>
+    </tr>
+    <tr>
+      <td>To Date:</td>
+      <td><%= @leave.to_date %></td>
+    </tr>
+    <tr>
+    <tr>
+    <tr>
+      <td>Reason:</td>
+      <td><%= @leave.reason %></td>
+    </tr>
+  <%= form_for @leave, url: {:action => "update"} do |f| %>
+    <tr>
+      <td>Your comments: </td>
+      <td><%= f.text_area :approver_comment %></td>
+    </tr>
+    <tr>
+      <td>Approve/Reject: </td>
+      <td><%= f.select :leave_status, ["Approve", "Reject"] %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= f.submit "Submit", :class => 'button' %></td>
+    </tr>
+  <% end %>
+  </table>
+
+</div>

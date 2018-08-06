@@ -1,0 +1,52 @@
+<%= link_to("<< Back to Homepage", root_path, :class => 'action_view') %>
+
+<h2> Registration Page </h2>
+
+<div class="Registration">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <table class = "expand">
+  
+  <tr>
+    <td><%= f.label :first_name %><br /></td>
+    <td><%= f.text_field :first_name, autofocus: true, autocomplete: "First Name" %></td>
+  </tr>
+  
+  <tr>
+    <td><%= f.label :last_name %><br /></td>
+    <td><%= f.text_field :last_name, autofocus: true, autocomplete: "Last Name" %></td>
+  </tr>
+  
+  <tr>
+    <td><%= f.label :role %><br /></td>
+    <td><%= f.select :role, ["Admin", "Applicant"] %></td>
+  </tr>
+  
+  <tr>
+    <td><%= f.label :email %><br /></td>
+    <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :password %></td>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <td><%= f.password_field :password, autocomplete: "off" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :password_confirmation %><br /></td>
+    <td><%= f.password_field :password_confirmation, autocomplete: "off" %></td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= f.submit "Sign up", :class => 'button' %></td>
+  </tr>
+  </table
+<% end %>
+
+</div>

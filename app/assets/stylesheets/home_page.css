@@ -1,0 +1,275 @@
+// Place all the styles related to the HomePage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the HomePage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*	
+	Side Navigation Menu V2, RWD
+	===================
+	License:
+	https://goo.gl/EaUPrt
+	===================
+	Author: @PableraShow
+
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/*
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+*/
+
+header {
+  right: 0;
+  left: 0;
+  top:0;
+  height: 120px;
+  min-width: 100%;
+  position: absolute;
+  background: #1F2739;
+}
+
+
+.header h1 {
+  font-family: 'Helvetica Neue', cursive;
+  text-transform: uppercase;
+  font-size: 3em; 
+  letter-spacing: -1px;
+  line-height: 1;
+  font-weight: bold;
+  font-weight: 200;
+  line-height:1em;
+  text-align: center;
+  color: #79d9fc;
+  float: center;
+  padding: 3%;
+  margin: 0px;
+  background-color:#1F2739;
+}
+
+
+section {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom:0;
+  min-width: 100%;
+  margin-top: 120px;
+  margin-bottom:50px;
+  background-color: #b3eafc;
+  position: absolute;
+}
+
+footer {
+  right: 0;
+  left: 0;
+  bottom:0;
+  height: 50px;
+  min-width: 100%;
+  position: absolute;
+}
+
+.footer_span h1 {
+  font-weight: bold;
+  font-size:1em; 
+  font-weight: 200;
+  line-height:1em;
+  text-align: center;
+  color: #79d9fc;
+  float: center;
+  padding: 2%;
+  margin: 0px;
+  background-color:#1F2739;
+}
+
+
+h2 {
+  font-family: 'Carme', sans-serif;
+  font-size:25px; 
+  font-weight: 200;
+  line-height:2em;
+  text-align: center;
+  color: #266170;
+}
+
+.para {
+  font-family: 'Carme', sans-serif;
+  font-size:20px; 
+  font-weight: 200;
+  line-height:2em;
+  text-align: center;
+  color: #04416b;
+}
+
+.error {
+  color: #ff0f0f;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.top {
+  margin: 5px;
+  padding: 0 1% 0 0;
+  font-size:0.9em;
+  color: #A7A1AE;
+  text-decoration: none;
+  float: right;
+  font-weight: bold;
+}
+
+.login {
+
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+}
+
+.view_table, .expand, .expand_full {
+  text-align: left;
+	overflow: hidden;
+	width: 80%;
+	margin: 0 auto;
+  display: table;
+  padding: 0 0 1em 0;
+}
+
+.view_table th {
+	font-weight: bold;
+	font-size: 1em;
+  text-align: left;
+  color: #79d9fc;
+}
+
+.view_table td{
+
+  color: #e3e9ef;
+	font-weight: normal;
+	font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.expand td, .expand_full{
+
+  color: #e3e9ef;
+	font-weight: normal;
+	font-size: 1em;
+}
+
+
+.action_view {
+  font-weight: bold;
+  text-decoration: none;
+  color: #9d54af;
+  text-align: center;
+}
+
+
+.view_table td, .view_table th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+    padding-left:1%;
+}
+
+.expand tr, .expand td, .login td, .login th, .expand_full tr, .expand_full td {
+	  padding-bottom: 1%;
+	  padding-top: 1%;
+    padding-left:3%;
+}
+
+.expand tr, .login tr,.expand_full tr  {
+	  background-color: #323C50;
+}
+
+.expand tr:last-child, .login tr:last-child{
+	  background-color: #b3eafc;
+	  padding: 0;
+	  margin: 0;
+}
+
+.expand td:first-child, .login td:first-child, .expand_full td:first-child
+{ color: #FB667A; }
+
+.button {
+    font-weight: bold;
+    position: relative;
+    background-color: #1F2739;
+    border: none;
+    font-size: 20px;
+    color: #5fd87f;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/* Background-color of the odd rows */
+.view_table tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.view_table, tr:nth-child(even) {
+	  background-color: #2C3446;
+}
+
+.view_table th {
+	  background-color: #1F2739;
+}
+
+
+.view_table tr:hover {
+   background-color: #464A52;
+   /*
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+	        */
+}
+  /*
+.view_table td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+  */
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+

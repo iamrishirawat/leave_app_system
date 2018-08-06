@@ -1,0 +1,33 @@
+<% @page_title = "Home Page" %>
+
+
+
+<div class="menu">
+  <h2>Home Page</h2>
+  <p class = "para">Welcome to Leave Application System.</p>
+  <ul>
+    <% if user_signed_in? %>
+    <div class="identity">Hello <%= current_user.first_name + " " + current_user.last_name %>!</div>
+    <br>
+    <br>
+    <% if current_user.role == "Applicant" %>
+      <li><%=link_to("Apply Leave", new_leave_system_path, :class => 'action_view') %></li>
+      <br>
+      <!-- <li><%#=link_to("Show Leave Balance", leave_system_show_balance_path, :class => 'action_view') %></li> -->
+      <li><%=link_to("Show Leave History", leave_system_index_path, :class => 'action_view') %></li>
+    <% end %>
+
+    <% if current_user.role == "Admin" %>
+    <li><%=link_to("Your worklist", leave_system_worklist_path, :class => 'action_view') %></li>
+    <br>
+    <li><%=link_to("Show Action History", leave_system_action_history_path, :class => 'action_view' ) %></li>
+    <% end %>
+    <% else %>
+    
+    <li><%= link_to("Login", new_user_session_path, :class => 'action_view') %></li>
+        <br>
+    <li><%= link_to("Register", new_user_registration_path, :class => 'action_view') %></li>
+    <% end %>
+  </ul>
+  
+</div>

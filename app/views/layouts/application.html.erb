@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LeaveApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <head>
+     <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :class=>'top', :id => 'logout') %>
+      <% else %>
+      <%= link_to('Login', new_user_session_path, :class=>'top', :id => 'login') %>
+      <% end %>
+      <span class = 'header'><h1>LEAVE APPLICATION SYSTEM</h1></span>
+    </head>
+    <section class = "section">
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+    </div>
+    <%= yield %>
+    </section>
+    <footer>
+    <span class = "footer_span"><h1>Developed by: Rishi</h1></span>
+    </footer>
+  </body>
+</html>
